@@ -138,7 +138,6 @@ export default {
         },
         '$store.state.appLocale': {
             handler(newVal) {
-                console.log(newVal);
                 this.$nextTick(() => {
                     this.setElementsWidths();
                 });

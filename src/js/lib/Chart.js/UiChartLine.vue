@@ -202,7 +202,7 @@ export default {
 
     &__graph {
         position: relative;
-        margin: 0 0 0 -8px;
+        margin: 0 0 10px -8px;
         box-sizing: border-box;
         flex-grow: 1;
         color: #313131;

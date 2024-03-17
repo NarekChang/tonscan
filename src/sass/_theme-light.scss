@@ -24,6 +24,7 @@
     --blue-bright-background: rgba(56, 139, 253, 0.1);
     --cyan-bright: #3fa5bd;
     --green-bright:  #02977e;
+    --blue-bright:  #4487f9;
     --red-bright: #f74b4c;
     --yellow-bright: #f9c426;
     --orange-bright: #fc9037;
@@ -95,13 +96,14 @@
     --chart-pie-border-color: var(--card-background);
     --chart-skeleton-background-color: var(--body-light-muted-color);
     --chart-line-green-color: var(--green-bright);
+    --chart-line-blue-color: var(--blue-bright);
     --chart-line-red-color: #bd4747;
     --chart-interval-selector-item-background: #ffffff;
     --chart-interval-selector-item-active-color: #000;
     --chart-interval-selector-background: rgba(19,19,20,.04);
     --chart-interval-selector-color: #8a8a93;
-    --chart-bar-primary-color: var(--chart-line-green-color);
-    --chart-bar-secondary-color: #6c8e7550;
+    --chart-bar-primary-color: var(--chart-line-blue-color);
+    --chart-bar-secondary-color: #d08eed;
     --chart-tooltip-background: #ffffff;
     --chart-tooltip-color: var(--body-text-color);
 
@@ -180,4 +182,7 @@
     --config-param-point-background-color: #f4f6f8;
     --config-param-point-text-color: #5e5e5e;
     --config-param-no-value: #fcfcfc;
+
+    // card
+    --card-stats-box-shadow: #e9e9e978;
 }

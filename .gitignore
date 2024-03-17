@@ -2,6 +2,7 @@ node_modules
 mix-manifest.json
 package-lock.json
 .env
+.vscode
 .env.testnet
 dist/*
 addrbook.json

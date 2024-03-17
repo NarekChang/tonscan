@@ -5,7 +5,7 @@ export default {
         return {
             chartGridColor: getCSSVar('chart-grid-color'),
             chartPieBorderColor: getCSSVar('chart-pie-border-color'),
-            chartLineColor : getCSSVar('chart-line-green-color'),
+            chartLineColor : getCSSVar('chart-line-blue-color'),
             chartBarPrimaryColor: getCSSVar('chart-bar-primary-color'),
             chartBarSecondaryColor: getCSSVar('chart-bar-secondary-color')
         }
@@ -17,7 +17,7 @@ export default {
             handler() {
                 this.chartGridColor = getCSSVar('chart-grid-color')
                 this.chartPieBorderColor = getCSSVar('chart-pie-border-color')
-                this.chartLineColor = getCSSVar('chart-line-green-color')
+                this.chartLineColor = getCSSVar('chart-line-blue-color')
                 this.chartBarPrimaryColor = getCSSVar('chart-bar-primary-color')
                 this.chartBarSecondaryColor = getCSSVar('chart-bar-secondary-color')
             }

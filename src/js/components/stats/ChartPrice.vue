@@ -1,15 +1,19 @@
 <template>
-  <div class="card" style="height: 100%; max-width: 100%">
-    <div class="card-title" style="border: none">
-      <i18n path="stats.market_data" />
-      <chart-interval-selector v-model="interval" />
+  <div class="card-stats_wrap">
+    <div class="card card-stats card-stats__side-ear" v-if="!isDataLoading">
+      <side-ear v-bind:param-top="marketData.price" v-bind:param-middle="marketData.caps"
+          v-bind:param-bottom="marketData.volume" v-bind:interval="interval" />
     </div>
-    <div class="data-container">
-      <side-ear v-if="!isDataLoading" v-bind:param-top="marketData.price" v-bind:param-middle="marketData.caps"
-        v-bind:param-bottom="marketData.volume" v-bind:interval="interval" />
 
-      <line-chart hide-legend style="flex-grow: 1" v-bind:labels="parsedChartLabels"
-        v-bind:datasets="parsedChartDatasets" />
+    <div class="card card-stats card-stats__chart">
+      <div class="card-title" style="border: none">
+        <i18n path="stats.market_data" />
+        <chart-interval-selector v-model="interval" />
+      </div>
+      <div class="data-container">
+        <line-chart hide-legend style="flex-grow: 1" v-bind:labels="parsedChartLabels"
+          v-bind:datasets="parsedChartDatasets" />
+      </div>
     </div>
   </div>
 </template>

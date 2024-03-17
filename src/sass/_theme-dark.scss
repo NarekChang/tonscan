@@ -94,13 +94,14 @@
     --chart-pie-border-color: var(--card-background);
     --chart-skeleton-background-color: var(--body-light-muted-color);
     --chart-line-green-color: #6c8e75;
+    --chart-line-blue-color: #4487f9;
     --chart-line-red-color: #bd4747;
     --chart-interval-selector-item-background: var(--card-row-separator);
     --chart-interval-selector-item-active-color: var(--body-text-color);
     --chart-interval-selector-background: rgba(0, 0, 0, 0.4);
     --chart-interval-selector-color: #cfd5dd90;
-    --chart-bar-primary-color: var(--chart-line-green-color);
-    --chart-bar-secondary-color: #6c8e7550;
+    --chart-bar-primary-color: var(--chart-line-blue-color);
+    --chart-bar-secondary-color: #d08eed;
     --chart-tooltip-background: #2c2c2c;
     --chart-tooltip-color: #fff;
 
@@ -173,4 +174,7 @@
     --config-param-point-background-color: #2d2d2d;
     --config-param-point-text-color: #5e5e5e;
     --config-param-no-value: var(--code-viewer-background);
+
+    // card
+    --card-stats-box-shadow: #00000075;
 }

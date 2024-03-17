@@ -4,7 +4,9 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 0 8px 0 0;
-  width: 165px;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
   box-sizing: border-box;
 }
 
@@ -12,7 +14,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 0;
-  padding: 0 16px;
+  padding: 20px 16px;
 
   header {
     margin-bottom: 6px;
@@ -30,30 +32,22 @@
   }
 }
 
-.data-container {
-  display: flex;
-  height: 100%;
-  flex-direction: row;
-}
-
 @media screen and (max-width: 599px) {
-  .data-container {
-    flex-direction: column;
-
-    .chart-bar {
-      max-height: calc(100% - 93px);
-    }
-  }
-
   .line-chart-ear {
     flex-direction: row;
     width: unset;
-    padding: 0;
-    margin: 0 0 20px 0;
+    padding: 12px 16px;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .line-chart-ear-box {
     padding: 0;
+
+    & + & {
+      padding-left: 20px;
+    }
   }
 }
 </style>

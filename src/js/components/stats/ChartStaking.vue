@@ -1,17 +1,21 @@
 <template>
-    <div class="card" style="height: 100%;max-width: 100%;">
-        <div class="card-title" style="border: none;" v-text="$t('stats.staking')"/>
+    <div class="card-stats_wrap">
+        <div class="card card-stats card-stats__chart">
+            <div class="card-title" style="border: none;" v-text="$t('stats.staking')" />
 
-        <div class="data-container">
-            <side-ear v-if="!isDataLoading"
-                v-bind:param-top="stakingData.apy"
-                v-bind:param-middle="stakingData.total"
-                v-bind:param-bottom="stakingData.validators"
-                v-bind:interval="interval"/>
+            <div class="data-container">
+                <line-chart style="flex-grow: 1"
+                    v-bind:labels="parsedChartLabels"
+                    v-bind:datasets="parsedChartDatasets"/>
+            </div>
+        </div>
 
-            <line-chart style="flex-grow: 1"
-                v-bind:labels="parsedChartLabels"
-                v-bind:datasets="parsedChartDatasets"/>
+        <div class="card card-stats card-stats__side-ear"  v-if="!isDataLoading">
+            <side-ear
+                    v-bind:param-top="stakingData.apy"
+                    v-bind:param-middle="stakingData.total"
+                    v-bind:param-bottom="stakingData.validators"
+                    v-bind:interval="interval"/>
         </div>
     </div>
 </template>
@@ -104,7 +108,7 @@ export default {
 
             const stakedDataset = {
                 ..._stakedDataset,
-                backgroundColor: `${this.chartLineColor}70`,
+                backgroundColor: `${this.chartBarSecondaryColor}70`,
             };
 
             switch (true) {
@@ -178,7 +182,7 @@ export default {
             });
 
             const stakedDataset = Object.freeze({
-                data: data.map(({ staked }) => Math.round(staked.toFixed(0))),
+                data: data.map(({ staked }) => Math.round(Number(staked).toFixed(0))),
                 fill: true,
                 type: 'bar',
                 yAxisID: 'volume',

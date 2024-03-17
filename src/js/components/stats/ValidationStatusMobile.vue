@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card card-stats">
         <div class="card-title" style="border: none; padding-bottom: 8px;">
             <i18n path="stats.validation_status" />
         </div>

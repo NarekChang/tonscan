@@ -28,6 +28,32 @@
     }
 }
 
+.card-stats_wrap {
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+
+    .card-stats {
+        position: relative;
+        height: 100%;
+        box-sizing: border-box;
+        
+        & + .card-stats {
+            margin-top: 0;
+            margin-left: 24px;
+        }
+    }
+}
+.card-stats__chart {
+    flex: 1;
+}
+.card-stats__side-ear {
+    width: 220px;
+}
+
 @for $i from 0 through 3 {
     .information-block[data-index='#{$i}'] {
         grid-column: #{$i * 3 + 1} / span 3;
@@ -44,11 +70,11 @@
 }
 
 .cotract-types-container {
-    grid-column: 1 / 6;
+    grid-column: 7 / 13;
 }
 
 .address-count-container {
-    grid-column: 6 / span 7;
+    grid-column: 1 / 7;
 }
 
 .price-container,
@@ -77,11 +103,28 @@
     .address-count-container {
         grid-column: 1 / 13;
     }
+    .card-stats__side-ear {
+        width: 170px;
+    }
+}
+
+.data-container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 599px) {
+    .data-container {
+        flex-direction: column;
+
+        .chart-bar {
+            max-height: calc(100% - 93px);
+        }
+    }
+    
     .stats-section {
-        grid-template-rows: 108px 108px 108px 108px 520px 570px repeat(2, 280px) 520px auto;
+        grid-template-rows: repeat(4, 108px) 320px 512px repeat(2, 280px) 340px auto;
         grid-gap: 14px;
     }
 
@@ -91,6 +134,44 @@
     .information-block[data-index='3'] {
         grid-column: 1 / 13;
     }
+
+    .card-stats_wrap {
+        display: block;
+
+        .card-stats {
+            display: flex;
+            flex: 1;
+            height: auto;
+        }
+
+        .card-stats + .card-stats {
+            margin-left: 0;
+            margin-top: 14px;
+        }
+
+        .card-stats__chart {
+            width: 100%;
+            display: block;
+        }
+        .card-stats__side-ear {
+            width: 100%;
+            height: 90px;
+            display: block;
+        }
+
+        .data-container {
+            .chart-bar {
+                max-height: 100%;
+            }
+        }
+    }
+
+    .address-count-container {
+        grid-row: 7;
+    }
+    .cotract-types-container {
+        grid-row: 6;
+    }
 }
 </style>
 
@@ -98,7 +179,7 @@
     <section class="stats-section">
 
         <div v-for="(item, index) of informationBlocks" :data-index="index" style="margin-top: 0;"
-            class="card information-block">
+            class="card card-stats information-block">
             <div class="chart-box" v-if="item.value == 0">
                 <header><span class="skeleton">User transaction count</span></header>
                 <div class="chart-box__value">
@@ -124,12 +205,12 @@
             <chart-price v-bind:market-cap="market_cap" />
         </div>
 
-        <div class="cotract-types-container">
-            <chart-contract-types />
-        </div>
-
         <div class="address-count-container">
             <chart-address-count v-on:supply="setTotalSupply" />
+        </div>
+
+        <div class="cotract-types-container">
+            <chart-contract-types />
         </div>
 
         <div class="transaction-count-container">

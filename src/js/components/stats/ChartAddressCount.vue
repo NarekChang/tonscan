@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="height: 100%;max-width: 100%;">
+    <div class="card card-stats" style="height: 100%;max-width: 100%;">
         <div class="card-title" style="border: none;"><i18n path="stats.address_count"/></div>
         <line-chart hide-legend
             v-bind:labels="parsedChartLabels"

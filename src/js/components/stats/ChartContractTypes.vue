@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="height: 100%;max-width: 100%;">
+    <div class="card card-stats" style="height: 100%;max-width: 100%;">
         <div class="card-title" style="border: none;"><i18n path="stats.contract_types"/></div>
         <donut-chart class="chart-contract-types" v-if="true" v-bind:labels="labels" v-bind:dataset="parsedChartDatasets">
             <template v-slot:header>{{ total }}</template>
